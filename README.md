@@ -1,8 +1,6 @@
 # Techno-Tradz-Website
 
-## Available Scripts
-
-In the project directory, you can run:
+## TO Run this website in Your Local Machine 
 
 ### `npm start`
 
