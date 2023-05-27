@@ -1,6 +1,6 @@
 # Techno-Tradz-Website
 
-## TO Run this website in Your Local Machine 
+## To Run this website in Your Local Machine 
 
 ### `npm start`
 
