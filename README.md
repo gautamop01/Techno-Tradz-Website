@@ -1,3 +1,7 @@
+# Project Description: Ultimate Crypto Trading App in India
+
+The Ultimate Crypto Trading App is a comprehensive web application developed using React and integrated with a fetching API to provide users in India with a powerful platform for trading cryptocurrencies. This project aims to deliver a seamless and user-friendly experience, empowering individuals to engage in secure and efficient crypto trading.
+
 # Techno-Tradz-Website
 
 ## To Run this website in Your Local Machine 
