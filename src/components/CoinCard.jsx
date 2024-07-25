@@ -1,37 +1,60 @@
-import { Heading, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
+import { VStack, Image, Heading, Text, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const CoinCard = ({ id, name, img, symbol, price, currencySymbol = "₹" }) => (
-  <Link to={`/coin/${id}`}>
-    <VStack
-      w={"52"}
-      shadow={"lg"}
-      p={"8"}
-      borderRadius={"lg"}
-      transition={"all 0.3s"}
-      m={"4"}
-      css={{
-        "&:hover": {
-          transform: "scale(1.1)",
-        },
-      }}
-    >
-      <Image
-        src={img}
-        w={"10"}
-        h={"10"}
-        objectFit={"contain"}
-        alt={"Exchange"}
-      />
-      <Heading size={"md"} noOfLines={1}>
-        {symbol}
-      </Heading>
+// Function to generate a random background color
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
 
-      <Text noOfLines={1}>{name}</Text>
-      <Text noOfLines={1}>{price ? `${currencySymbol}${price}` : "NA"}</Text>
-    </VStack>
-  </Link>
-);
+const CoinCard = ({ id, name, img, price, symbol, currencySymbol }) => {
+  const bgColor = getRandomColor();
+
+  return (
+    <Link to={`/coin/${id}`} style={{ textDecoration: 'none' }}>
+      <Box
+        w={"52"}
+        h={"52"}
+        bg={bgColor}
+        shadow={"lg"}
+        p={"6"}
+        borderRadius={"full"} // Circular design
+        transition={"all 0.3s"}
+        m={"4"}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        css={{
+          "&:hover": {
+            transform: "scale(1.05)",
+            zIndex: 1, // Ensure card is on top during hover
+          },
+        }}
+      >
+        <Image
+          src={img}
+          w={"16"} // Adjusted size for better fit
+          h={"16"}
+          objectFit={"contain"}
+          alt={`${name} logo`}
+          mb={3} // Margin below image
+        />
+        <Heading size={"md"} noOfLines={1} mb={2}>
+          {currencySymbol}
+          {price.toFixed(2)}
+        </Heading>
+        <Text noOfLines={1} fontSize={"sm"} textAlign="center">
+          {name} ({symbol.toUpperCase()})
+        </Text>
+      </Box>
+    </Link>
+  );
+};
 
 export default CoinCard;

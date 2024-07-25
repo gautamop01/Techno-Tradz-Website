@@ -57,35 +57,50 @@ const Exchanges = () => {
   );
 };
 
-const ExchangeCard = ({ name, img, rank, url }) => (
-  <a href={url} target={"blank"}>
-    <VStack
-      w={"52"}
-      shadow={"lg"}
-      p={"8"}
-      borderRadius={"lg"}
-      transition={"all 0.3s"}
-      m={"4"}
-      css={{
-        "&:hover": {
-          transform: "scale(1.1)",
-        },
-      }}
-    >
-      <Image
-        src={img}
-        w={"10"}
-        h={"10"}
-        objectFit={"contain"}
-        alt={"Exchange"}
-      />
-      <Heading size={"md"} noOfLines={1}>
-        {rank}
-      </Heading>
+const getRandomColor = () => {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
 
-      <Text noOfLines={1}>{name}</Text>
-    </VStack>
-  </a>
-);
+const ExchangeCard = ({ name, img, rank, url }) => {
+  const bgColor = getRandomColor();
+
+  return (
+    <a href={url} target={"_blank"} rel="noopener noreferrer">
+      <VStack
+        w={"52"}
+        h={"52"}
+        bg={bgColor}
+        shadow={"lg"}
+        p={"8"}
+        borderRadius={"full"}
+        transition={"all 0.3s"}
+        m={"4"}
+        css={{
+          "&:hover": {
+            transform: "scale(1.1)",
+          },
+        }}
+      >
+        <Image
+          src={img}
+          w={"20"}
+          h={"20"}
+          objectFit={"contain"}
+          alt={"Exchange"}
+        />
+        <Heading size={"md"} noOfLines={1}>
+          {rank}
+        </Heading>
+
+        <Text noOfLines={1}>{name}</Text>
+      </VStack>
+    </a>
+  );
+};
 
 export default Exchanges;

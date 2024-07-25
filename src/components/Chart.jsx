@@ -37,20 +37,77 @@ const Chart = ({ arr = [], currency, days }) => {
       {
         label: `Price in ${currency}`,
         data: prices,
-        borderColor: "rgb(255,99,132)",
-        backgroundColor: "rgba(255,99,132,0.5)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderWidth: 4, // Increased to make the line bolder
+        pointRadius: 5,
+        pointBackgroundColor: "rgba(54, 162, 235, 1)",
+        pointBorderColor: "#fff",
+        pointHoverRadius: 7,
       },
     ],
   };
 
-  return (
-    <Line
-      options={{
-        responsive: true,
-      }}
-      data={data}
-    />
-  );
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false, // Allows the chart to fill the container
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          color: '#333',
+          font: {
+            size: 14,
+          },
+        },
+      },
+      tooltip: {
+        backgroundColor: '#fff',
+        titleColor: '#333',
+        bodyColor: '#333',
+        borderColor: '#ddd',
+        borderWidth: 1,
+      },
+      title: {
+        display: true,
+        text: `Price Trend (${currency})`,
+        font: {
+          size: 16,
+          weight: 'bold',
+        },
+        color: '#333',
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          color: '#ddd',
+          borderColor: '#ddd',
+        },
+        ticks: {
+          color: '#333',
+          font: {
+            size: 12,
+          },
+        },
+      },
+      y: {
+        grid: {
+          color: '#ddd',
+          borderColor: '#ddd',
+        },
+        ticks: {
+          color: '#333',
+          font: {
+            size: 12,
+          },
+        },
+      },
+    },
+  };
+
+  return <Line data={data} options={options} style={{ height: '100%', width: '100%' }} />;
 };
 
 export default Chart;
