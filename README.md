@@ -1,4 +1,4 @@
-# Project Description: Ultimate Crypto Trading App in India
+# Project Description: Ultimate Crypto Trading Prices Visualization with Graphs
 
 Experience the premier platform for tracking real-time cryptocurrency prices in India. Our app delivers up-to-the-minute updates, ensuring you stay informed and ahead in the crypto trading world.
 
