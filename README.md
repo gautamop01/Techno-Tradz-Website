@@ -31,7 +31,7 @@ This website provides an interactive interface to visualize and track cryptocurr
 ![Screenshot 2](Overview/pic2.png)
 ![Screenshot 2](Overview/pic3.png)
 ![Screenshot 2](Overview/pic4.png)
-![Screenshot 2](Overview/pic5.png)
+![Screenshot 2](Overview/pic55.png)
 ![Screenshot 2](Overview/pic6.png)
 
 ## To Run this website on Your Local Machine
