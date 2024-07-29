@@ -27,12 +27,12 @@ This website provides an interactive interface to visualize and track cryptocurr
 
 ## Screenshots
 
-![Screenshot 1](pic1.png)
-![Screenshot 2](pic2.png)
-![Screenshot 2](pic3.png)
-![Screenshot 2](pic4.png)
-![Screenshot 2](pic5.png)
-![Screenshot 2](pic6.png)
+![Screenshot 1](Overview/pic1.png)
+![Screenshot 2](Overview/pic2.png)
+![Screenshot 2](Overview/pic3.png)
+![Screenshot 2](Overview/pic4.png)
+![Screenshot 2](Overview/pic5.png)
+![Screenshot 2](Overview/pic6.png)
 
 ## To Run this website on Your Local Machine
 
